@@ -1,1 +1,1 @@
-NAME: Lydia Batchelor ONID: batchell
+This is my assignment-1 submission!
