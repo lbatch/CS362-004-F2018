@@ -1339,7 +1339,7 @@ int smithyCardEffect(struct gameState* state, int currentPlayer, int handPos){
 
       //+3 Cards
       int i = 0;
-      for (i = 0; i < 3; i++)
+      for (i = 0; i <= 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1369,7 +1369,7 @@ int adventurerCardEffect(struct gameState* state, int currentPlayer, int temphan
 	}
       }
       while(z-1>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	state->discard[currentPlayer][++state->discardCount[currentPlayer]]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
       return 0;
@@ -1398,7 +1398,7 @@ int treasureMapCardEffect(struct gameState* state, int currentPlayer, int handPo
 	  //gain 4 Gold cards
 	  for (i = 0; i < 4; i++)
 	    {
-	      gainCard(gold, state, 1, currentPlayer);
+	      gainCard(gold, state, 0, currentPlayer);
 	    }
 				
 	  //return success
@@ -1440,7 +1440,7 @@ int salvagerCardEffect(struct gameState* state, int currentPlayer, int handPos, 
 	}
 			
       //discard card
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1);
       return 0;
 
 }
