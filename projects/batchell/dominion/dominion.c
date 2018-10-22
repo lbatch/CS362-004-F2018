@@ -693,6 +693,7 @@ int villageEffect(int handPos, struct gameState *state)
 			
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
+  printf("DISCARDED!!!");
   return 0;
 }	
 
@@ -1284,7 +1285,7 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
     }
-	
+  printf("DISCARDED TO: %d", state->handCount[0]);	
   return 0;
 }
 
