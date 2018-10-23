@@ -1,4 +1,4 @@
-/* unittest2: Testing isgameover function
+/* unittest3: Testing fullDeckCount function
 **
 ** Include in makefile:
 ** unittest3: unittest3.c dominion.o rngs.o
@@ -216,10 +216,10 @@ int main() {
 
   if(passNum == numTests)
   {
-    printf("\nSUCCESS: ALL TESTS PASSED\n");
+    printf("\nSUCCESS: ALL TESTS PASSED\n\n");
   }
   else
   {
-    printf("\n%d/%d TESTS PASSED\n", passNum, numTests);
+    printf("\n%d/%d TESTS PASSED\n\n", passNum, numTests);
   }
 }

@@ -56,7 +56,7 @@ int main() {
   /* Shuffle a deck with 0 cards
   * Anticipated result, TEST 1: function returns -1 */
   #if(NOISY_TEST)
-  printf("Testing deck with 0 cards: ");
+  printf("Testing deck with 0 cards: \n");
   #endif
 
   memset(&G, 23, sizeof(struct gameState));
@@ -65,7 +65,7 @@ int main() {
   returnVal = shuffle(0, &G); 
 
   #if(NOISY_TEST)
-  printf("Shuffle return = %d, expected -1", returnVal);
+  printf("Shuffle return = %d, expected -1\n", returnVal);
   #endif
   numTests++;
   passNum += assertTrue("Shuffling a deck with 0 cards returns error code", returnVal == -1);
@@ -154,10 +154,10 @@ int main() {
 
   if(passNum == numTests)
   {
-    printf("\nSUCCESS: ALL TESTS PASSED\n");
+    printf("\nSUCCESS: ALL TESTS PASSED\n\n");
   }
   else
   {
-    printf("\n%d/%d TESTS PASSED\n", passNum, numTests);
+    printf("\n%d/%d TESTS PASSED\n\n", passNum, numTests);
   }
 }

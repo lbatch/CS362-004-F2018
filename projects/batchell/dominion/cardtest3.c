@@ -69,8 +69,8 @@ int main() {
   G.discardCount[1] = discardSize;
   memcpy(G.hand[1], k, sizeof(int) * handSize);
   memcpy(G.deck[1], k, sizeof(int) * deckSize);
-  memcpy(G.discard[1], k, sizeof(int) * discardSize);
-
+ memcpy(G.discard[1], k, sizeof(int) * discardSize);
+ 
   // check return value
   returnVal = cardEffect(village, choice1, choice2, choice3, &G, handPos, &bonus);
   #if(NOISY_TEST)
@@ -212,10 +212,10 @@ int main() {
 
   if(passNum == numTests)
   {
-    printf("\nSUCCESS: ALL TESTS PASSED\n");
+    printf("\nSUCCESS: ALL TESTS PASSED\n\n");
   }
   else
   {
-    printf("\n%d/%d TESTS PASSED\n", passNum, numTests);
+    printf("\n%d/%d TESTS PASSED\n\n", passNum, numTests);
   }
 }

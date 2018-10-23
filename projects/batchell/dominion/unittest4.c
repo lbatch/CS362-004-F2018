@@ -85,7 +85,7 @@ int main() {
   /* Test case 4: Valid card present
   * Anticipated result: function returns card */
   #if(NOISY_TEST)
-  printf("Testing deck count when card is present in hand position: \n");
+  printf("Testing response when card is present in hand position: \n");
   #endif
 
   memset(&G, 23, sizeof(struct gameState));
@@ -120,10 +120,10 @@ int main() {
  
   if(passNum == numTests)
   {
-    printf("\nSUCCESS: ALL TESTS PASSED\n");
+    printf("\nSUCCESS: ALL TESTS PASSED\n\n");
   }
   else
   {
-    printf("\n%d/%d TESTS PASSED\n", passNum, numTests);
+    printf("\n%d/%d TESTS PASSED\n\n", passNum, numTests);
   }
 }
