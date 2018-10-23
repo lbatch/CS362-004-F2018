@@ -42,7 +42,7 @@ int main() {
   int choice3 = 0;
   int handPos = 0;
   int bonus = 0;
-  int game, handSize, deckSize, discardSize, returnVal, embargo, coins, supplyCount; 
+  int game, handSize, deckSize, discardSize, returnVal, embargoCt, coins, supplyCount; 
   int numTests = 0;
   int passNum = 0;
 
@@ -53,7 +53,7 @@ int main() {
   handSize = 10;
   deckSize = 10; 
   discardSize = 2;
-  embargo = 0;
+  embargoCt = 0;
   coins = 0;
   memset(&G, 23, sizeof(struct gameState));
   game = initializeGame(2, k, seed, &G);
@@ -61,7 +61,7 @@ int main() {
   G.handCount[0] = handSize;
   G.deckCount[0] = deckSize;
   G.discardCount[0] = discardSize;
-  G.embargoTokens[choice1] = embargo;
+  G.embargoTokens[choice1] = embargoCt;
   G.coins = coins;
   G.supplyCount[choice1] = supplyCount;
   memcpy(G.hand[0], k, sizeof(int) * handSize);
@@ -106,10 +106,10 @@ int main() {
 
   // check embargo count
   #if(NOISY_TEST)
-  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargo + 1);
+  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargoCt + 1);
   #endif
   numTests++;
-  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargo + 1)));
+  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargoCt + 1)));
 
   // check coins
   #if(NOISY_TEST)
@@ -146,7 +146,7 @@ int main() {
   handSize = 10;
   deckSize = 10; 
   discardSize = 2;
-  embargo = 1;
+  embargoCt = 1;
   coins = 0;
   memset(&G, 23, sizeof(struct gameState));
   game = initializeGame(2, k, seed, &G);
@@ -154,7 +154,7 @@ int main() {
   G.handCount[0] = handSize;
   G.deckCount[0] = deckSize;
   G.discardCount[0] = discardSize;
-  G.embargoTokens[choice1] = embargo;
+  G.embargoTokens[choice1] = embargoCt;
   G.coins = coins;
   G.supplyCount[choice1] = supplyCount;
   memcpy(G.hand[0], k, sizeof(int) * handSize);
@@ -199,10 +199,10 @@ int main() {
 
   // check embargo count
   #if(NOISY_TEST)
-  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargo + 1);
+  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargoCt + 1);
   #endif
   numTests++;
-  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargo + 1)));
+  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargoCt + 1)));
 
   // check coins
   #if(NOISY_TEST)
@@ -239,7 +239,7 @@ int main() {
   handSize = 10;
   deckSize = 10; 
   discardSize = 2;
-  embargo = 10;
+  embargoCt = 10;
   coins = 0;
   memset(&G, 23, sizeof(struct gameState));
   game = initializeGame(2, k, seed, &G);
@@ -247,7 +247,7 @@ int main() {
   G.handCount[0] = handSize;
   G.deckCount[0] = deckSize;
   G.discardCount[0] = discardSize;
-  G.embargoTokens[choice1] = embargo;
+  G.embargoTokens[choice1] = embargoCt;
   G.coins = coins;
   G.supplyCount[choice1] = supplyCount;
   memcpy(G.hand[0], k, sizeof(int) * handSize);
@@ -292,10 +292,10 @@ int main() {
 
   // check embargo count
   #if(NOISY_TEST)
-  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargo + 1);
+  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargoCt + 1);
   #endif
   numTests++;
-  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargo + 1)));
+  passNum += assertTrue("Embargo results in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargoCt + 1)));
 
   // check coins
   #if(NOISY_TEST)
@@ -332,7 +332,7 @@ int main() {
   handSize = 10;
   deckSize = 10; 
   discardSize = 2;
-  embargo = 0;
+  embargoCt = 0;
   coins = 0;
   memset(&G, 23, sizeof(struct gameState));
   game = initializeGame(2, k, seed, &G);
@@ -340,7 +340,7 @@ int main() {
   G.handCount[0] = handSize;
   G.deckCount[0] = deckSize;
   G.discardCount[0] = discardSize;
-  G.embargoTokens[choice1] = embargo;
+  G.embargoTokens[choice1] = embargoCt;
   G.coins = coins;
   G.supplyCount[choice1] = supplyCount;
   memcpy(G.hand[0], k, sizeof(int) * handSize);
@@ -385,10 +385,10 @@ int main() {
 
   // check embargo count
   #if(NOISY_TEST)
-  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargo);
+  printf("Ending embargo count = %d, expected %d\n", G.embargoTokens[choice1], embargoCt);
   #endif
   numTests++;
-  passNum += assertTrue("Embargo does not result in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargo)));
+  passNum += assertTrue("Embargo does not result in an incremented embargo status\n", (G.embargoTokens[choice1] == (embargoCt)));
 
   // check coins
   #if(NOISY_TEST)

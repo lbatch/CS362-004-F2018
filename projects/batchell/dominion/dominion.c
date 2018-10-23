@@ -702,14 +702,10 @@ int embargoEffect(int handPos, struct gameState *state, int choice)
 
   //+2 Coins
    state->coins = state->coins + 2;
-   printf("%d", state->coins);
 
-  printf("SUPPLY COUNT: %d", state->supplyCount[choice]);
-		
   //see if selected pile is in play
   if ( state->supplyCount[choice] == 1 ) // bug -- 1 vs -1
   {
-    printf("SUPPLY COUNT: %d", state->supplyCount[choice]);
     return -1;
   }
 			
@@ -751,12 +747,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
   }
-  
+ 
 	
   //uses switch to select card and perform actions
   switch( card ) 
     {
-      case adventurer: return adventurerEffect(&drawntreasure, state, &z, temphand);
+    case adventurer: return adventurerEffect(&drawntreasure, state, &z, temphand);
     case council_room:
       //+4 Cards
       for (i = 0; i < 4; i++)
@@ -1188,7 +1184,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       discardCard(handPos, currentPlayer, state, 0);			
 
       return 0;
-
 		
     case embargo: return embargoEffect(handPos, state, choice1);
 		
@@ -1250,7 +1245,6 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       //no second treasure_map found in hand
       return -1;
     }
-	
   return -1;
 }
 
