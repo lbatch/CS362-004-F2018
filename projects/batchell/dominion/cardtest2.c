@@ -91,10 +91,10 @@ int main() {
   
   // check deck size
   #if(NOISY_TEST)
-  printf("Ending deck size = %d, expected %d\n", G.deckCount[0], (deckSize - 3));
+  printf("Ending deck size = %d, expected %d\n", G.deckCount[0], (deckSize - 6));
   #endif
   numTests++;
-  passNum += assertTrue("Adventurer results in less cards in the deck equal to 2 treasures and cards on top\n", (G.deckCount[0] == deckSize - 6));
+  passNum += assertTrue("Adventurer results in less cards in the deck equal to 2 treasures and cards on top\n", (G.deckCount[0] == (deckSize - 6)));
 
   // check discard size
   #if(NOISY_TEST)

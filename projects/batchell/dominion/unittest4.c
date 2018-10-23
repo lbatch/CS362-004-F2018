@@ -61,7 +61,7 @@ int main() {
   printf("handCard() return = %d, expected -1 or error\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("handCart() indicates error when hand is empty\n", returnVal == -1);
+  passNum += assertTrue("handCard() indicates error when hand is empty\n", returnVal == -1);
  
   /* Test case 2: Hand position is not empty (exceeds hand size)
   * Anticipated result: function returns -1 or other error response */

@@ -194,21 +194,21 @@ int main() {
   printf("Ending hand size = %d, expected %d\n", G.handCount[1], handSize);
   #endif
   numTests++;
-  passNum += assertTrue("Adventurer results in no change to other player's hand size\n", (G.handCount[1] == handSize)); 
+  passNum += assertTrue("Village results in no change to other player's hand size\n", (G.handCount[1] == handSize)); 
   
   // check other player deck size
   #if(NOISY_TEST)
   printf("Ending deck size = %d, expected %d\n", G.deckCount[1], deckSize);
   #endif
   numTests++;
-  passNum += assertTrue("Adventurer results in no change to other player's deck size\n", G.deckCount[1] == deckSize);
+  passNum += assertTrue("Village results in no change to other player's deck size\n", G.deckCount[1] == deckSize);
 
   // check other player discard size
   #if(NOISY_TEST)
   printf("Ending discard size = %d, expected %d\n", G.discardCount[1], discardSize);
   #endif
   numTests ++;
-  passNum += assertTrue("Adventurer results in no change to other player's discard size\n", G.discardCount[1] == discardSize);
+  passNum += assertTrue("Village results in no change to other player's discard size\n", G.discardCount[1] == discardSize);
 
   if(passNum == numTests)
   {

@@ -169,10 +169,10 @@ int main() {
   
   // check deck size
   #if(NOISY_TEST)
-  printf("Ending deck size = %d, expected %d\n", G.deckCount[0], deckSize - 3);
+  printf("Ending deck size = %d, expected %d\n", G.deckCount[0], deckSize + discardSize - 3);
   #endif
   numTests++;
-  passNum += assertTrue("Smithy results in (discard pile size - 3) cards in the deck\n", (G.deckCount[0] == deckSize + discardSize - 3));
+  passNum += assertTrue("Smithy results in (deck size + discard pile size - 3) cards in the deck\n", (G.deckCount[0] == deckSize + discardSize - 3));
 
   // check discard size
   #if(NOISY_TEST)

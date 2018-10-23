@@ -106,29 +106,29 @@ int main() {
   G.handCount[0] = 10;
   memcpy(G.hand[0], k, sizeof(int) * 10);
   
-  // At beginning of deck
+  // At beginning of hand
   returnVal = fullDeckCount(0, adventurer, &G); 
   #if(NOISY_TEST)
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found at beginning of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found at beginning of hand\n", returnVal == 1);
 
-  // At end of deck
+  // At end of hand
   returnVal = fullDeckCount(0, smithy, &G); 
   #if(NOISY_TEST)
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found at end of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found at end of hand\n", returnVal == 1);
 
-  // In middle of deck
+  // In middle of hand
   returnVal = fullDeckCount(0, minion, &G); 
   #if(NOISY_TEST)
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found in middle of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found in middle of hand\n", returnVal == 1);
 
   /* Test case 4: Card is only in discard
   * Anticipated result: function returns 1 */
@@ -147,7 +147,7 @@ int main() {
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found at beginning of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found at beginning of discard\n", returnVal == 1);
 
   // At end of deck
   returnVal = fullDeckCount(0, smithy, &G); 
@@ -155,7 +155,7 @@ int main() {
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found at end of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found at end of discard\n", returnVal == 1);
 
   // In middle of deck
   returnVal = fullDeckCount(0, minion, &G); 
@@ -163,7 +163,7 @@ int main() {
   printf("fullDeckCount return = %d, expected 1\n", returnVal);
   #endif
   numTests++;
-  passNum += assertTrue("Single card found in middle of deck\n", returnVal == 1);
+  passNum += assertTrue("Single card found in middle of discard\n", returnVal == 1);
  
   /* Test case 5: 1-10 cards each in deck, hand, and discard pile
   * Anticipated result: sum of deckCt, handCt, and disCt*/

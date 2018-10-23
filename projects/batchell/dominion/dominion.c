@@ -693,7 +693,6 @@ int villageEffect(int handPos, struct gameState *state)
 			
   //discard played card from hand
   discardCard(handPos, currentPlayer, state, 0);
-  printf("DISCARDED!!!");
   return 0;
 }	
 
@@ -703,10 +702,14 @@ int embargoEffect(int handPos, struct gameState *state, int choice)
 
   //+2 Coins
    state->coins = state->coins + 2;
+   printf("%d", state->coins);
+
+  printf("SUPPLY COUNT: %d", state->supplyCount[choice]);
 		
   //see if selected pile is in play
   if ( state->supplyCount[choice] == 1 ) // bug -- 1 vs -1
   {
+    printf("SUPPLY COUNT: %d", state->supplyCount[choice]);
     return -1;
   }
 			
@@ -1285,7 +1288,6 @@ int discardCard(int handPos, int currentPlayer, struct gameState *state, int tra
       //reduce number of cards in hand
       state->handCount[currentPlayer]--;
     }
-  printf("DISCARDED TO: %d", state->handCount[0]);	
   return 0;
 }
 

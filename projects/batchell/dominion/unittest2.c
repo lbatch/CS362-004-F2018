@@ -1,8 +1,8 @@
 /* unittest2: Testing isgameover function
 **
 ** Include in makefile:
-** unittest1: unittest1.c dominion.o rngs.o
-** gcc -o unittest1 -g unittest1.c dominion.o rngs.o $(CFLAGS) 
+** unittest2: unittest1.c dominion.o rngs.o
+** gcc -o unittest2 -g unittest2.c dominion.o rngs.o $(CFLAGS) 
 **
 */
 
